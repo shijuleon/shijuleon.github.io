@@ -1,0 +1,12 @@
+name: 	      Shiju Leon
+title:        Shiju's Blog
+markdown:     kramdown
+permalink:    /blog/:categories/:year/:month/:day/:title.html
+highlighter: rouge
+paginate:     10
+excerpt_separator: <!--more-->
+paginate_path: "blog/page:num"
+plugins: [jekyll-paginate]
+gems:
+  - jekyll-sitemap
+  - jekyll-paginate

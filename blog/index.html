@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+      {% for post in paginator.posts %}
+  <div class="container">
+        <div class="blog-main">
+            <h2 class="blog-post-title"><a class="text-decoration-none" href="{{ post.url }}">{{ post.title }}</a></h2>
+            <p class="blog-post-meta">{{ post.date | date: "%A, %B %-d, %Y, %H:%M" }}</p>
+
+           {{ post.excerpt }}
+             {% capture content_words %} 
+      {{ post.content | number_of_words }} 
+    {% endcapture %} 
+    {% capture excerpt_words %} 
+      {{ post.excerpt | number_of_words }} 
+    {% endcapture %} 
+    {% if excerpt_words != content_words %}
+    <p style="padding-top: 10px"><a class="btn btn-sm btn-primary" href="{{ post.url }}" role="button">Read more</a>
+    </p>
+    {% endif %}
+</div></div></br></br>
+          {% endfor %}
